@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Provider } from 'react-redux';
+import "tailwindcss/tailwind.css";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import routeConfiguration from './routeConfiguration';
+import { app } from './firebase-config';
+import {getConfig} from './common/i18n/services/config'
+import i18next from 'i18next';
+import { I18nextProvider } from 'react-i18next';
+import configureStore from './redux/store';
+
+i18next.init(getConfig());
+const store = configureStore({}, app);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.StrictMode>
+      <Provider store={store}>
+        <I18nextProvider i18n={i18next}>
+          <Router>
+            <Routes>
+              {routeConfiguration().map(i => <Route element={<>{i.component({ children: i.children })}</>} path={i.path}/>)}
+            </Routes>
+          </Router>
+        </I18nextProvider>
+      </Provider>
+    </React.StrictMode>
   );
 }
 

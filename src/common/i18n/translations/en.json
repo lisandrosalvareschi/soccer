@@ -1,0 +1,479 @@
+{
+  "modules": {
+    "auth": {
+      "login": {
+        "error": "Cannot login",
+        "title": "Welcome",
+        "subtitle": "Login",
+        "action": "Login",
+        "label": "Create an account"
+      },
+      "logout": {
+        "label": "Logout"
+      },
+      "register": {
+          "error": "Cannot register user",
+          "title": "Create your account",
+          "subtitle": "",
+          "action": "Register",
+          "label": "¿Already have an account?"
+      },
+      "forgetPassword": {
+        "title": "Reset password",
+        "subtitle": "Complete the form, then you will receive an email",
+        "link": "Have you forgotten your password?",
+        "action": "Send"
+      }
+    },
+    "home": {
+      "breadcrumb": "Home",
+      "drawer": "Home",
+      "title": "Home"
+    },
+    "account": {
+      "breadcrumb": "Accounts",
+      "drawer": "Accounts",
+      "title": "Accounts",
+      "data": {
+        "title": "Account data"
+      },
+      "saman": {
+        "label": "SAMAN Account"
+      },
+      "states": {
+        "label": "States",
+        "enabled": "Enabled",
+        "disabled": "Disabled",
+        "deleted": "Deleted"
+      },
+      "types": {
+        "label": "Types",
+        "client": "Client",
+        "dispatcher": "Dispatcher"
+      },
+      "businessName": {
+        "label": "Bussiness name",
+        "validRequired": "The field Bussiness name is required."
+      },
+      "country": {
+        "label": "Country",
+        "validRequired": "The field Country is required."
+      },
+      "number": {
+        "label": "Account N°",
+        "validRequired": "The field Account N° is required."
+      },
+      "providerGroup": {
+        "label": "Provider Group",
+        "validRequired": "The field Provider Group is required."
+      },
+      "type": {
+        "label": "Type",
+        "validRequired": "The field Type is required."
+      },
+      "state": {
+        "label": "State",
+        "validRequired": "The field State is required."
+      },
+      "creationDate": {
+        "label": "Creation Date",
+        "labelFrom": "Created from",
+        "labelTo": "to"
+      },
+      "create": {
+        "breadcrumb": "New",
+        "success": "The account was successfully created",
+        "title": "New account",
+        "subtitle": "Complete the form",
+        "save": {
+          "label": "Save"
+        },
+        "cancel": {
+          "label": "Cancel"
+        }
+      },
+      "edit": {
+        "breadcrumb": "Edit",
+        "title": "Edit account",
+        "success": "The account was successfully updated",
+        "save": {
+          "label": "Update"
+        },
+        "cancel": {
+          "label": "Cancel"
+        }
+      },
+      "delete": {
+        "success": "The account was successfully deleted"
+      }
+    },
+    "user": {
+      "data": {
+        "title": "User data"
+      },
+      "lastName": {
+        "label": "Last name",
+        "validRequired": "The field Last Name is required"
+      },
+      "document": {
+        "label": "Document N°",
+        "validRequired": "The field Doc. N° is required"
+      },
+      "documentType": {
+        "label": "Document Type",
+        "validRequired": "The field Doc. type is required."
+      },
+      "password": {
+        "label": "Password",
+        "validRequired": "The field pasword is required."
+      },
+      "firstname": {
+        "label": "Password",
+        "validRequired": "The field pasword is required."
+      },
+      "create": {
+        "action": "Register",
+        "breadcrumb": "Nuevo",
+        "label": "New user?",
+        "success": "El usuario fué creado correctamente",
+        "title": "Nuevo usuario",
+        "save": {
+          "label": "Guardar"
+        },
+        "cancel": {
+          "label": "Cancelar"
+        }
+      },
+      "edit": {
+        "breadcrumb": "Edit",
+        "title": "Edit user",
+        "success": "The user was successfully updated",
+        "save": {
+          "label": "Update"
+        },
+        "cancel": {
+          "label": "Cancel"
+        }
+      },
+      "delete": {
+        "success": "The user was successfully deleted"
+      },
+      "breadcrumb": "Users",
+      "drawer": "Users",
+      "title": "Users",
+      "states": {
+        "label": "States",
+        "new": "New",
+        "unregistered": "Unregistered",
+        "enabled": "Enabled",
+        "disabled": "Disabled",
+        "deleted": "Deleted",
+        "changePassword": "Change password"
+      },
+      "alerts": {
+        "new": "The user is new.",
+        "changePassword": "The user has a pending password change.",
+        "deleted": "The user was deleted.",
+        "disabled": "The user was disabled.",
+        "unregistered": "The user is not registered."
+      },
+      "types": {
+        "label": "Types",
+        "internal": "Saman",
+        "external": "External"
+      },
+      "email": {
+        "label": "Email",
+        "validEmailError": "The field Email must be a valid email.",
+        "validRequired": "The field Email is required."
+      },
+      "type": {
+        "label": "Type",
+        "validRequired": "The field Type is required."
+      },
+      "role": {
+        "label": "Role",
+        "validRequired": "The field Role is required."
+      },
+      "phone": {
+        "label": "Phone"
+      },
+      "state": {
+        "label": "State"
+      },
+      "creationDate": {
+        "label": "Creation Date",
+        "labelFrom": "Created from",
+        "labelTo": "to"
+      }
+    },
+    "role": {
+      "drawer": "Roles & permissions",
+      "breadcrumb": "Roles",
+      "title": "Roles",
+      "data": {
+        "title": "Role data"
+      },
+      "states": {
+        "label": "States",
+        "new": "New",
+        "deleted": "Deleted"
+      },
+      "name": {
+        "label": "Name",
+        "validRequired": "The field Name is required."
+      },
+      "permissions": {
+        "account": {
+          "title": "Account permissions"
+        },
+        "user": {
+          "title": "User permissions"
+        },
+        "role": {
+          "title": "Role permissions"
+        },
+        "queries": {
+          "title": "Queries permissions",
+          "contracts": {
+            "read": "Contracts"
+          },
+          "accountStatus": {
+            "read": "Account status"
+          },
+          "containers": {
+            "read": "Containers tracker"
+          }
+        },
+        "read": "Read",
+        "create": "Create",
+        "update": "Update",
+        "delete": "Delete",
+        "disabled": "Disabled"
+      },
+      "creationDate": {
+        "label": "Creation Date",
+        "labelFrom": "Created from",
+        "labelTo": "to"
+      },
+      "create": {
+        "breadcrumb": "New",
+        "success": "The account was successfully created",
+        "title": "New account",
+        "save": {
+          "label": "Save"
+        },
+        "cancel": {
+          "label": "Cancel"
+        }
+      },
+      "edit": {
+        "breadcrumb": "Edit",
+        "title": "Edit account",
+        "success": "The account was successfully updated",
+        "save": {
+          "label": "Update"
+        },
+        "cancel": {
+          "label": "Cancel"
+        }
+      },
+      "delete": {
+        "success": "The account was successfully deleted"
+      }
+    },
+    "contracts": {
+      "breadcrumb": "Contracts",
+      "drawer": "Contracts",
+      "title": "Contracts",
+      "subtitle": "",
+      "states": {
+        "pending": {
+          "label": "Pending"
+        },
+        "finished": {
+          "label": "Finished"
+        }
+      },
+      "account": {
+        "label": "Account N°",
+        "validRequired": "The field Account N° is required."
+      },
+      "providerGroup": {
+        "label": "Provider group",
+        "labelShort": "Provider group",
+        "validRequired": "The field Provider group is required."
+      },
+      "date": {
+        "label": "Date",
+        "labelFrom": "Date from",
+        "labelTo": "to"
+      },
+      "billOfLad": {
+        "label": "Bill of Lading"
+      },
+      "bill": {
+        "label": "Bill"
+      },
+      "bills": {
+        "label": "Bills"
+      },
+      "booking": {
+        "label": "Booking"
+      },
+      "client": {
+        "label": "Client"
+      },
+      "clientName": {
+        "label": "Client name"
+      },
+      "container": {
+        "label": "Container"
+      },
+      "containers": {
+        "label": "Containers"
+      },
+      "contract": {
+        "label": "Contract"
+      },
+      "cantContract": {
+        "label": "Sum Contract"
+      },
+      "cantOrder": {
+        "label": "Sum Order"
+      },
+      "cantCompl": {
+        "label": "Sum Compl."
+      },
+      "cantDelivery": {
+        "label": "Sum Delivery"
+      },
+      "dateCutOff": {
+        "label": "Date Cut Off"
+      },
+      "denomination": {
+        "label": "Denomination"
+      },
+      "descrCondPaid": {
+        "label": "Cond. Paid"
+      },
+      "destiny": {
+        "label": "Destiny"
+      },
+      "fulfilled": {
+        "label": "Date Fulfilled"
+      },
+      "incoterms": {
+        "label": "Incoterms"
+      },
+      "netWeight": {
+        "label": "Net Weight"
+      },
+      "order": {
+        "label": "Order"
+      },
+      "picking": {
+        "label": "Picking"
+      },
+      "seal": {
+        "label": "Seal"
+      },
+      "ship": {
+        "label": "Ship"
+      },
+      "shipments": {
+        "label": "Shipments"
+      },
+      "status": {
+        "label": "Status"
+      },
+      "totBill": {
+        "label": "Total"
+      },
+      "transpName": {
+        "label": "Transport"
+      },
+      "valueFob": {
+        "label": "FOB"
+      },
+      "valueFlete": {
+        "label": "Cargo"
+      },
+      "valueSeguro": {
+        "label": "Insurance"
+      }
+    },
+    "accountStatus": {
+      "breadcrumb": "Account status",
+      "drawer": "Account status",
+      "title": "Account status",
+      "subtitle": "",
+      "customer": {
+        "label": "Customer",
+        "validRequired": "The field Customer is required."
+      },
+      "docNo": {
+        "label": "Doc. N°"
+      },
+      "docDate": {
+        "label": "Doc. date",
+        "labelFrom": "Doc. date from",
+        "labelTo": "to"
+      },
+      "blineDate": {
+        "label": "Bline date",
+        "labelFrom": "Bline date from",
+        "labelTo": "to"
+      },
+      "amtDoccur": {
+        "label": "Amount ene MD"
+      },
+      "allocNmbr": {
+        "label": "Reference"
+      },
+      "refDocNo": {
+        "label": "Bill SAP"
+      },
+      "itemText": {
+        "label": "Text"
+      }
+    },
+    "containers": {
+      "breadcrumb": "Containers tracker",
+      "drawer": "Containers tracker",
+      "title": "Containers tracker",
+      "subtitle": "",
+      "bolNumber": {
+        "label": "Bill of landing",
+        "validRequired": "The field Bill of landing is required."
+      }
+    },
+    "nav-bar": {
+      "title": "MENU",
+      "account": {
+        "title": "Account"
+      },
+      "carnet": {
+        "title": "Digital Card"
+      },
+      "abonos": {
+        "title": "Tickets"
+      },
+      "matchs": {
+        "title": "Matchs"
+      },
+      "comprobantes": {
+        "title": "Receipts"
+      },
+      "cuota": {
+        "title": "Partner fee"
+      }
+    }
+  },
+  "common": {
+    "filter": "Filter",
+    "optionDefault": "Select an option",
+    "showMoreFilters": "Show more filters",
+    "showLessFilters": "Show less filters"
+  }
+}

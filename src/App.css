@@ -36,3 +36,56 @@
     transform: rotate(360deg);
   }
 }
+
+
+.btn-map {
+  background-color: rgba(0,0,0,.5);
+}
+
+.btn-map:hover {
+  background-color: red !important;
+  background: #D9D9D9;
+}
+
+.stadium {
+  position: relative !important
+}
+
+.stadium .btn-tribunes:nth-child(1) {
+  top: 17% !important;
+  margin: 0 auto !important;
+  /* display: none; */
+}
+
+.stadium .btn-tribunes:nth-child(2) {
+  bottom: 5% !important;
+  left: 35% !important;
+  /* transform: ; */
+}
+
+.stadium .btn-tribunes:nth-child(3) {
+  top: 50% !important;
+  left: 65% !important;
+  width: 15vw;
+  transform: rotate(90deg) ;
+}
+
+.stadium .btn-tribunes:nth-child(4) {
+  margin: auto 0 !important;
+  right: 73% !important;
+  transform: rotate(-90deg) ;
+}
+
+.btn-tribunes {
+  position: absolute !important;
+  color: white !important;
+  font-weight: 900 !important;
+  letter-spacing: 5px !important;
+  min-width: max-content !important;
+  padding: 25px !important;
+  background-color: rgba(0,0,0,.25) !important;
+}
+
+area {
+  cursor: pointer !important;
+}
