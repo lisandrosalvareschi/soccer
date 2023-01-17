@@ -29,7 +29,6 @@ export default function AppLayout ({children}) {
           {/* <TemporaryDrawer open={menu} setOpen={setMenu} /> */}
           <AppDrawer children={children} open={menu} setOpen={setMenu} />
           <Grid container sx={{ height: 'calc(100vh - 70px)', overflow: 'auto' }}>
-            {/* <button onClick={() => navigate('/PROFILE')}>Aca</button> */}
             <Box className="w-full flex" sx={{ flexDirection: 'column' }}>
              <Routes>
               {children?.length && children.map(i => <Route element={<>{i.component({ children: i.children })}</>} path={i.path} />)}

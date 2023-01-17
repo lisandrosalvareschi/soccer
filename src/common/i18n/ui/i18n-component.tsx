@@ -1,6 +1,6 @@
 import { Box, Button, Menu, MenuItem, Typography, Grid } from '@mui/material';
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ReactCountryFlag from 'react-country-flag';
 // import { useSelector, useDispatch } from 'react-redux';
 // import { selectedLanguageSelector } from '../../../Redux/Actions/action';
@@ -9,8 +9,8 @@ import { useTranslation } from 'react-i18next';
 export const I18nSelectorComponent = ({sx, xs, colorOption}) => {
     // const dispatch = useDispatch();
     const languages = [{ lng: 'en', flag: 'gb', name: 'English' }, { lng: 'es', flag: 'es', name: 'Español' }]
-    const selectedLanguage = languages[0];
     const [t, i18next] = useTranslation('app');
+    const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
 
@@ -21,10 +21,19 @@ export const I18nSelectorComponent = ({sx, xs, colorOption}) => {
   
     const handleSelectLanguage = (language) => {
       const lng = languages.filter(x => x.lng === language)[0];
-    //   dispatch(selectedLanguageSelector(lng))
+      setSelectedLanguage(lng)
       i18next.changeLanguage(lng.lng)
       handleClose();
     };
+
+    useEffect(() => {
+      if(i18next.language) {
+        const lng = languages.filter(x => x.lng === i18next.language)[0];
+        return setSelectedLanguage(lng)
+      } else {
+        return setSelectedLanguage(languages[0])
+      }
+    }, [i18next.language])
   
     const handleClose = () => {
       setAnchorEl(null);

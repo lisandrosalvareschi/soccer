@@ -117,15 +117,15 @@
       },
       "document": {
         "label": "Document N°",
-        "validRequired": "The field Doc. N° is required"
+        "validRequired": "The field document is required"
       },
       "documentType": {
         "label": "Document Type",
-        "validRequired": "The field Doc. type is required."
+        "validRequired": "The field document type is required"
       },
       "password": {
         "label": "Password",
-        "validRequired": "The field pasword is required."
+        "validRequired": "The field password is required."
       },
       "firstname": {
         "label": "Password",

@@ -106,6 +106,7 @@ export const login = (values) => async (dispatch) => {
   try {
     const user = await axios
       .post('http://localhost:3005/users/login', {dni: values.document, tipoDoc: values.documentType, password: values.password});
+      if(user.data.error) return dispatch(loginError(user.data.error))
       dispatch(loginSuccess());
       return dispatch(fetchCurrentUser(user.data))
   } catch (e) {

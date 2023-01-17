@@ -20,7 +20,7 @@ function App() {
         <I18nextProvider i18n={i18next}>
           <Router>
             <Routes>
-              {routeConfiguration().map(i => <Route element={<>{i.component({ children: i.children })}</>} path={i.path}/>)}
+              {routeConfiguration().map(i => <Route key={i.name} element={<>{i.component({ children: i.children })}</>} path={i.path}/>)}
             </Routes>
           </Router>
         </I18nextProvider>

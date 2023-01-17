@@ -4,7 +4,7 @@ import { Typography } from '@mui/material';
 import { useNavigate  } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-export default function FooterLogin({canLogin, onSubmit}) {
+export default function FooterLogin({canLogin, onSubmit, values}) {
     const [t] = useTranslation('app');
     const navigate= useNavigate();
     return (
@@ -14,7 +14,7 @@ export default function FooterLogin({canLogin, onSubmit}) {
                 disabled={!canLogin}
                 type="submit"
                 className='text-white'
-                onClick={() => onSubmit()}
+                onClick={() => onSubmit(values)}
                 variant='black'
             >
                 {t('modules.auth.login.action')}
