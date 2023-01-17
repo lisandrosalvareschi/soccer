@@ -6,7 +6,7 @@ import Input from "../../../core/components/Input/Input";
 import { useTranslation } from 'react-i18next';
 
 import { AiOutlineUser } from "react-icons/ai";
-import getDocumentTypes from '../enum/documentTypes';
+import { getDocumentTypes } from '../enum/documentTypes';
 import Select from "../../../core/components/Select/Select";
 import { RoleIcon } from "../../../core/svg";
 

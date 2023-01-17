@@ -118,15 +118,15 @@
         },
         "document": {
           "label": "Número de documento",
-          "validRequired": "El campo Doc. N° es requerido"
+          "validRequired": "El campo documento es requerido"
         },
         "documentType": {
           "label": "Tipo de documento",
-          "validRequired": "El campo Doc. type es requerido."
+          "validRequired": "El campo tipo de documento es requerido"
         },
         "password": {
           "label": "Contraseña",
-          "validRequired": "El campo pasword es requerido."
+          "validRequired": "El campo contraseña es requerido"
         },
         "fullName": {
           "label": "Nombre",

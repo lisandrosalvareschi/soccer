@@ -4,7 +4,7 @@ import Input from "../../../core/components/Input/Input";
 import Select from "../../../core/components/Select/Select";
 import { RoleIcon } from "../../../core/svg";
 
-import getDocumentTypes from "../enum/documentTypes";
+import { getDocumentTypes } from "../enum/documentTypes";
 
 import { useTranslation } from 'react-i18next';
 

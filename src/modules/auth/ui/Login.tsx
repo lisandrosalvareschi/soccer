@@ -6,16 +6,13 @@ import Imagen from '../assets/escudo.png';
 import { styled } from '@mui/system';
 import { Box, Grid, Container, Typography } from "@mui/material";
 
-// import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-// import { I18nSelectorComponent } from '../../../common/i18n/ui/i18n-component';
-
-import FooterLogin from '../components/FooterLogin';
 import FormLogin from '../components/FormLogin';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../redux/actions';
 import { I18nSelectorComponent } from '../../../common/i18n/ui/i18n-component';
+import SnackBar from '../../../core/components/SnackBar/snack-bar';
 
 const StyledPaper = styled(Box)({
     height: '100vh',
@@ -28,6 +25,11 @@ const StyledPaper = styled(Box)({
 const Login = () => {
     const [canLogin, setCanLogin] = useState(false);
     const navigate = useNavigate();
+    const [snackBar, setSnackBar] = useState({
+        message: '',
+        open: false,
+        type: '',
+    })
     //  @ts-ignore. @ts-expect-error.
     const { loginInProgress, loginError, isAuthenticated } = useSelector((state) => state.auth);
     const [values, setValues] = useState({
@@ -40,16 +42,29 @@ const Login = () => {
 
     const dispatch = useDispatch();
 
-    const onSubmit = async () => {
+    const onSubmit = async (values) => {
         // @ts-ignore. @ts-expect-error.
         dispatch(login(values));
     }
 
     useEffect(() => {
        if(isAuthenticated) {
-        return navigate('/')
+        navigate('/')
        }
-    }, [isAuthenticated, loginInProgress, loginError])
+    }, [isAuthenticated, loginInProgress])
+
+    useEffect(() => {
+        if(loginError) { 
+            setSnackBar({message: loginError, open: true, type: 'error'})
+            setTimeout(() => {
+                return setSnackBar({
+                    message: '', 
+                    open: false,
+                    type: 'info'
+                })
+            }, 2500);
+        }
+    }, [loginError])
 
     useEffect(() => {
        if(loginInProgress) {
@@ -71,6 +86,7 @@ const Login = () => {
             }}
         >
             <Grid container>
+                <SnackBar snackBar={snackBar} />
                 <StyledPaper>
                    <I18nSelectorComponent 
                         sx={{position: 'absolute', right: 15, top: 15, background: 'white', margin: 2, borderRadius: 2, padding: .5}} 
@@ -79,14 +95,10 @@ const Login = () => {
                     />
                     <Container maxWidth="sm" sx={{backgroundColor: 'rgba(0, 0, 0, .5)', m: 1, p: 1, borderRadius: 2}}>
                         <Box sx={{ textAlign: 'center' }}>
-                        <img src={Imagen} style={{ maxHeight: '100px', margin: '0 auto' }} alt={'logo_club'} />
-                        <Typography sx={{ color: 'white', fontWeight: 900, fontSize: '1.4rem', marginTop: '5px' }}>{t('modules.auth.login.title')}</Typography>
-                        <Typography  sx={{ color: 'white', fontWeight: 600, fontSize: '1rem', marginBottom: '25px' }}>{t('modules.auth.login.subtitle')}</Typography>
-                        <FormLogin setCanLogin={setCanLogin} setValues={setValues} values={values}  />
-                        <Link to="/reset-password" className="flex justify-end items-center text-white font-bold pb-20px">
-                            <Box>{t('modules.auth.forgetPassword.link')}</Box>
-                        </Link>
-                        <FooterLogin canLogin={canLogin} onSubmit={onSubmit} />
+                            <img src={Imagen} style={{ maxHeight: '100px', margin: '0 auto' }} alt={'logo_club'} />
+                            <Typography sx={{ color: 'white', fontWeight: 900, fontSize: '20px', marginTop: '5px' }}>{t('modules.auth.login.title')}</Typography>
+                            <Typography  sx={{ color: 'white', fontWeight: 600, fontSize: '16px', marginBottom: '25px' }}>{t('modules.auth.login.subtitle')}</Typography>
+                            <FormLogin onSubmit={onSubmit} canLogin={canLogin} setCanLogin={setCanLogin} setValues={setValues} values={values}  />
                         </Box>
                     </Container>
                 </StyledPaper>
