@@ -16,11 +16,13 @@ const Input: FC<{
   autoComplete?: string,
   inputClassName?: string,
   onFocus?: () => void,
+  style?: any,
   onBlur?: () => void,
 }> = ({
   disabled,
   className = "",
   value,
+  style,
   placeholder,
   onChange = () => {},
   multiline = false,
@@ -77,6 +79,7 @@ const Input: FC<{
           ${disabled ? "bg-gray-200 cursor-not-allowed" : ""}
           ${inputClassName}
         `}
+        style={style}
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}

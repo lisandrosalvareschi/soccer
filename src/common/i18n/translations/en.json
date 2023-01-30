@@ -32,7 +32,7 @@
     },
     "account": {
       "breadcrumb": "Accounts",
-      "drawer": "Accounts",
+      "drawer": "Account",
       "title": "Accounts",
       "data": {
         "title": "Account data"
@@ -468,6 +468,27 @@
       "cuota": {
         "title": "Partner fee"
       }
+    },
+    "familyGroup": {
+      "title": "Family Group"
+    },
+    "bagde": {
+      "title": "Bagdes"
+    },
+    "ticket": {
+      "title": "Tickets"
+    },
+    "match": {
+      "title": "Matchs"
+    },
+    "membership": {
+      "title": "Memberships"
+    },
+    "receipt": {
+      "title": "Receipts"
+    },
+    "setting": {
+      "title": "Settings"
     }
   },
   "common": {

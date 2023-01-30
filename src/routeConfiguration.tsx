@@ -14,7 +14,7 @@ import GradeIcon from '@mui/icons-material/Grade';
 import CardMembershipIcon from '@mui/icons-material/CardMembership';
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
-
+import SettingsIcon from '@mui/icons-material/Settings';
 
 export default function routeConfiguration() {
     return [
@@ -45,56 +45,56 @@ export default function routeConfiguration() {
           {
             component: (props: any) => <div>Hola dashboard</div>,
             path: '/',
-            name: 'Dashboard',
+            name: 'modules.home.title',
             icon: HomeIcon
           },
           {
             component: (props: any) => <Profile {...props} />,
             path: '/profile',
-            name: 'Profile',
+            name: 'modules.account.title',
             icon: PersonIcon
           },
           {
             component: (props: any) => <Profile {...props} />,
             path: '/family-group',
-            name: 'Family Group',
+            name: 'modules.familyGroup.title',
             icon: WorkspacesIcon
           },
           {
             component: (props: any) => <Profile {...props} />,
             path: '/badge',
-            name: 'Badge',
+            name: 'modules.bagde.title',
             icon: BadgeIcon
           },
           {
             component: (props: any) => <Profile {...props} />,
             path: '/tickets',
-            name: 'Tickets',
+            name: 'modules.ticket.title',
             icon: GradeIcon
           },
           {
             component: (props: any) => <Profile {...props} />,
             path: '/match',
-            name: 'Match',
+            name: 'modules.match.title',
             icon: SportsSoccerIcon
           },
           {
             component: (props: any) => <Profile {...props} />,
             path: '/membership',
-            name: 'Memberships',
+            name: 'modules.membership.title',
             icon: CardMembershipIcon
           },
           {
             component: (props: any) => <Profile {...props} />,
             path: '/receipt',
-            name: 'Receipt',
+            name: 'modules.receipt.title',
             icon: ReceiptLongIcon
           },
           {
             component: (props: any) => <Profile {...props} />,
-            path: '/membership',
-            name: 'Memberships',
-            icon: GradeIcon
+            path: '/setting',
+            name: 'modules.setting.title',
+            icon: SettingsIcon
           }
         ]
       },

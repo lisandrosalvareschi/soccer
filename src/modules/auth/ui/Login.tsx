@@ -33,7 +33,7 @@ const Login = () => {
     //  @ts-ignore. @ts-expect-error.
     const { loginInProgress, loginError, isAuthenticated } = useSelector((state) => state.auth);
     const [values, setValues] = useState({
-        documentType: '',
+        documentType: 'DNI',
         document: '',
         password: ''
     })

@@ -25,7 +25,6 @@ export const showCurrentUserSuccess = (user) => ({ payload: user, type: SHOW_CUR
 export const fetchCurrentUser = (obj) => (dispatch, getState, firebase) => {
   dispatch(showCurrentUserRequest());
   const { isAuthenticated } = getState().auth;
-  console.log(isAuthenticated)
   if (!isAuthenticated) {
     dispatch(showCurrentUserSuccess(null));
     return Promise.resolve({});

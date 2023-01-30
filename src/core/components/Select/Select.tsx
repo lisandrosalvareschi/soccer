@@ -19,8 +19,10 @@ const Select: FC<{
   inputClassName?: string,
   onFocus?: () => void,
   onBlur?: () => void,
+  style?: any,
 }> = ({
   disabled,
+  style,
   className = "",
   value,
   placeholder,
@@ -86,6 +88,7 @@ const Select: FC<{
         onChange={(e) => onChange(e.target.value)}
         disabled={disabled}
         // maxLength={maxLength}
+        style={style}
         onFocus={onFocus}
         onBlur={onBlur}
       >

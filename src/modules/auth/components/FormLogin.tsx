@@ -36,6 +36,7 @@ export default function FormLogin (props) {
                 <Form>
                     <div className="pb-39px">
                         <Select
+                            style={{backgroundColor: 'white'}}
                             options={getDocumentTypes(i18.language)}
                     placeholder={t('modules.user.documentType.label')}
                     onChange={(value) => setFieldValue('documentType', value)}
@@ -48,6 +49,7 @@ export default function FormLogin (props) {
                     </div>
                     <div className="pb-39px">
                         <Input
+                            style={{backgroundColor: 'white'}}
                             placeholder={t('modules.user.document.label')}
                             type="number"
                             value={values.document}
@@ -60,6 +62,7 @@ export default function FormLogin (props) {
                     </div>
                     <div className="pb-20px">
                         <Input
+                            style={{backgroundColor: 'white'}}
                             placeholder={t('modules.user.password.label')}
                             type={isShowPassword ? "text" : "password"}
                             value={values.password}
@@ -72,7 +75,6 @@ export default function FormLogin (props) {
                                 className={`mr-18px text-gray-400 select-none cursor-pointer`}
                                 onClick={() => setShowPassword(previousValue => !previousValue)}
                             />}
-                            autoComplete="current-password"
                         />
                         {errors.password && (
                             <Typography style={{color: 'red'}}>{String(errors.password)}</Typography>

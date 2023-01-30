@@ -39,7 +39,7 @@
       "account": {
         "breadcrumb": "Cuentas",
         "drawer": "Cuentas",
-        "title": "Cuentas",
+        "title": "Perfil",
         "data": {
           "title": "Datos de la cuenta"
         },
@@ -471,26 +471,26 @@
           "validRequired": "El campo Bill of landing es obligatorio."
         }
       },
-      "nav-bar": {
-        "title": "MENÚ",
-        "account": {
-          "title": "Mis Datos"
-        },
-        "carnet": {
-          "title": "Carnet digital"
-        },
-        "abonos": {
-          "title": "Abonos"
-        },
-        "matchs": {
-          "title": "Partidos"
-        },
-        "comprobantes": {
-          "title": "Comprobantes"
-        },
-        "cuota": {
-          "title": "Cuota social"
-        }
+      "familyGroup": {
+        "title": "Grupo familiar"
+      },
+      "bagde": {
+        "title": "Carnets"
+      },
+      "ticket": {
+        "title": "Abonos"
+      },
+      "match": {
+        "title": "Partidos"
+      },
+      "membership": {
+        "title": "Cuotas"
+      },
+      "receipt": {
+        "title": "Recibos"
+      },
+      "setting": {
+        "title": "Configuración"
       }
     },
     "common": {

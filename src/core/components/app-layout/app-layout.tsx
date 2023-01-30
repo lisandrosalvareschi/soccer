@@ -31,7 +31,7 @@ export default function AppLayout ({children}) {
           <Grid container sx={{ height: 'calc(100vh - 70px)', overflow: 'auto' }}>
             <Box className="w-full flex" sx={{ flexDirection: 'column' }}>
              <Routes>
-              {children?.length && children.map(i => <Route element={<>{i.component({ children: i.children })}</>} path={i.path} />)}
+              {children?.length && children.map(i => <Route key={i.path} element={<>{i.component({ children: i.children })}</>} path={i.path} />)}
              </Routes>
             </Box>
           </Grid>

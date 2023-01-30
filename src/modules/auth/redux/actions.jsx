@@ -6,8 +6,8 @@ import {
   getAuth,
   setPersistence,
   signInWithPopup,
-  signOut,
 } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 import { googleAuthProvider } from '../../../firebase-config';
 import api from '../../profile/services/api';
 import { fetchCurrentUser, showCurrentUserSuccess } from './reducers';
@@ -101,6 +101,22 @@ export const googleLoginRequest = () => ({ type: GOOGLE_LOGIN_REQUEST });
 export const googleLoginSuccess = () => ({ type: GOOGLE_LOGIN_SUCCESS });
 export const googleLoginError = (e) => ({ payload: e, type: GOOGLE_LOGIN_ERROR });
 
+const hardUser = {
+  "firstName": "Lisandro",
+  "lastName": "Salvareschi",
+  "email": "lisandro.salvareschi@email.com",
+  "gender": "M",
+  "imageProfile": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80",
+  "document": 41104061,
+  "documentType": "DNI",
+  "created": "2023-01-28 12:00:00",
+  "lastUpdated": "2023-01-29 12:00:00",
+  "verifiedAccount": true,
+  "address": "Las heras 5246",
+  "condition": "ACTIVATED",
+  "categoryId": "category-1"
+}
+
 export const login = (values) => async (dispatch) => {
   dispatch(loginRequest());
   try {
@@ -108,13 +124,16 @@ export const login = (values) => async (dispatch) => {
       .post('http://localhost:3005/users/login', {dni: values.document, tipoDoc: values.documentType, password: values.password});
       if(user.data.error) return dispatch(loginError(user.data.error))
       dispatch(loginSuccess());
-      return dispatch(fetchCurrentUser(user.data))
+      return dispatch(fetchCurrentUser(
+        // user.data
+        hardUser
+      ))
   } catch (e) {
     return dispatch(loginError(e));
   }
 };
 
-export const signup = (params) => (dispatch, getState, firebase) => {
+export const signup = (params) => (dispatch) => {
   const { email, firstName, lastName } = params.values;
   const access_token = params.accessToken;
   const auth = getAuth();
@@ -153,17 +172,7 @@ export const signup = (params) => (dispatch, getState, firebase) => {
     });
 };
 
-export const logout = () => (dispatch, getState, firebase) => {
-  const auth = getAuth();
-  dispatch(logoutRequest());
-  return signOut(auth)
-    .then(() => dispatch(logoutSuccess()))
-    .then(() => dispatch(showCurrentUserSuccess(null)))
-    .catch((e) => {
-      dispatch(logoutError(e));
-      throw e;
-    });
-};
+export const logout = () => (dispatch) => window.location.href = '/login';
 
 export const googleLogin = () => (dispatch) => {
   const auth = getAuth();
